@@ -17,7 +17,7 @@ c.greeting = "oh, hello";
 // see "oh hello" for both
 console.log(`c: ${c.greeting}\nd: ${d.greeting}`);
 
-// by reference -- even as parameters
+// by reference -- even as parameters, changes for all
 function changeGreeting(obj) {
   obj.greeting = "Hola";
 }
