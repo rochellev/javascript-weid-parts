@@ -1,15 +1,19 @@
 // functions are objects
 // sits in memory
+greet();
+// function statement -- object in memory
 function greet() {
   console.log("hi");
 }
+// uncaught typeError: anonymousGreet not a function
+// all variables set to undefined 
+anonymousGreet();
 
-// in memory
-greet.language = "english";
+// function expression -- returns an function object
+// setting variable to contain a function object, ref address in memory
+var anonymousGreet = function() {
+  console.log("hi");
+};
 
-console.log(greet);
-console.log(greet.language);
 
 // function object{ name: greet, code: console.log())}
-
-
