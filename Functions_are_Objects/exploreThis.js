@@ -24,6 +24,15 @@ var c = {
   log: function() {
     this.name = "updated c obj";
     console.log(this);
+
+    var setName = function(newName) {
+      // points to global object!
+      // even though sitting inside obj
+      this.name - newName;
+    };
+    // expect to see updated again. but not the case!
+    setName("updated the c object again!");
+    console.log(this);
   }
 };
 
