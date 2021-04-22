@@ -22,17 +22,19 @@ b();
 var c = {
   name: "the c object",
   log: function() {
-    this.name = "updated c obj";
-    console.log(this);
+    // by reference, point to same memory address as this
+    var self = this;
+    self.name = "updated c obj";
+    console.log(self);
 
     var setName = function(newName) {
       // points to global object!
       // even though sitting inside obj
-      this.name - newName;
+      self.name = newName;
     };
     // expect to see updated again. but not the case!
     setName("updated the c object again!");
-    console.log(this);
+    console.log(self);
   }
 };
 
